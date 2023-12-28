@@ -1,11 +1,20 @@
 import "./App.css";
 import { Tab } from "./components/Tabs/TabItem";
 import { TabsComponent } from "./components/Tabs/Tabs";
+import { ToastProvider } from "./components/Toast/ToastProvider";
+import { ToastRoot } from "./components/Toast/ToastRoot";
 
 export const App = () => {
+  const [open, setOpen] = React.useState(false);
+  const eventDateRef = React.useRef(new Date());
+  const timerRef = React.useRef(0);
+
+  React.useEffect(() => {
+    return () => clearTimeout(timerRef.current);
+  }, []);
   return (
     <>
-      <TabsComponent
+      {/* <TabsComponent
         classNameRoot="Tabs"
         classNameList="TabList"
         defaultValue="tab1"
@@ -40,7 +49,22 @@ export const App = () => {
             />
           </Tab>
         </div>
-      </TabsComponent>
+      </TabsComponent> */}
+      <ToastRoot isOpen={open}>
+        <ToastProvider titleText="Scheduled: Catch up">
+          <div>
+            <time
+              className="ToastDescription"
+              dateTime={eventDateRef.current.toISOString()}
+            >
+              {prettyDate(eventDateRef.current)}
+            </time>
+          </div>
+          <div>
+            <button className="Button small green">Undo</button>
+          </div>
+        </ToastProvider>
+      </ToastRoot>
     </>
   );
 };

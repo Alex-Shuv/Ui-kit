@@ -1,8 +1,8 @@
 import * as Toast from "@radix-ui/react-toast";
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 
 type ToastRootProps = {
-  children: ReactNode;
+  children: JSX.Element;
   type?: "foreground" | "background";
   defaultOpen?: boolean;
   isOpen: boolean;
