@@ -1,0 +1,15 @@
+.TabList {
+  display: flex;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.TabContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.TabTitle {
+  color: teal;
+  width: 100%;
+}
