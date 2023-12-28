@@ -2,7 +2,11 @@ import { TabsComponent } from "./components/Tabs/TabsComponent";
 import { TabsList } from "./components/Tabs/TabsList";
 import { TabsTrigger } from "./components/Tabs/TabsTrigger";
 import { TabsContent } from "./components/Tabs/TabsContent";
-
+import { ToastComponent } from "./components/Toast/ToastComponent";
+import { ToastAction } from "./components/Toast/ToastAction";
+import { ToastTitle } from "./components/Toast/ToastTitle";
+import { ToastDescription } from "./components/Toast/ToastDescription";
+import { ToastViewPort } from "./components/Toast/ToastViewPort";
 import "./App.css";
 
 export const App = () => {
@@ -32,6 +36,17 @@ export const App = () => {
           <p>Hello</p>
         </TabsContent>
       </TabsComponent>
+
+      <ToastComponent label="Notification">
+        <ToastTitle>Scheduled: Catch up</ToastTitle>
+        <ToastDescription>
+          <p>Посмотри новую тему</p>
+        </ToastDescription>
+        <ToastAction altText="Goto schedule to undo">
+          <button className="Button small green">Undo</button>
+        </ToastAction>
+        <ToastViewPort />
+      </ToastComponent>
     </>
   );
 };
