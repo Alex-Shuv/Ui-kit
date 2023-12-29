@@ -20,12 +20,12 @@ export const Tab: FC<TabProps> = ({
   classNameTitle,
   classNameContent,
 }) => (
-  <>
+  <div>
     <Tabs.Trigger className={classNameTitle} disabled={disabled} value={value}>
       {title}
     </Tabs.Trigger>
     <Tabs.Content className={classNameContent} value={value}>
       {children}
     </Tabs.Content>
-  </>
+  </div>
 );

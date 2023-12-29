@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import * as Tabs from "@radix-ui/react-tabs";
+import * as TabsX from "@radix-ui/react-tabs";
 import "./style.css";
 
 type TabsProps = {
@@ -12,7 +12,7 @@ type TabsProps = {
   loop?: boolean;
 };
 
-export const TabsComponent: FC<TabsProps> = ({
+export const Tabs: FC<TabsProps> = ({
   children,
   defaultValue,
   orientation,
@@ -21,14 +21,14 @@ export const TabsComponent: FC<TabsProps> = ({
   classNameList,
   loop,
 }) => (
-  <Tabs.Root
+  <TabsX.Root
     orientation={orientation}
     defaultValue={defaultValue}
     dir={dir}
     className={classNameRoot}
   >
-    <Tabs.List loop={loop} className={classNameList}>
+    <TabsX.List loop={loop} className={classNameList}>
       {children}
-    </Tabs.List>
-  </Tabs.Root>
+    </TabsX.List>
+  </TabsX.Root>
 );
